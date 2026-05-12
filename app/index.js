@@ -59,7 +59,6 @@ app.post('/upload', upload.single('dokumen'), (req, res) => {
 
     if (!file) return res.status(400).send('File dokumen tidak ditemukan!');
 
-    // Bikin nama file jadi unik
     const fileName = Date.now() + '-' + file.originalname;
 
     // 1. Upload ke MinIO
@@ -70,7 +69,6 @@ app.post('/upload', upload.single('dokumen'), (req, res) => {
         const query = 'INSERT INTO mahasiswa (nama, nama_dokumen) VALUES (?, ?)';
         db.query(query, [nama, fileName], (err, result) => {
             if (err) {
-                // Biar aman kalau tabel belum dibuat sama Didi
                 return res.status(500).send('File masuk ke MinIO, tapi gagal simpan ke Database: ' + err.message);
             }
             res.send(`
