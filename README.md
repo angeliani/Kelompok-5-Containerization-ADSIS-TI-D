@@ -1,122 +1,234 @@
-**Kelompok 5 – Containerization ADSIS TI-D**
+# Kelompok 5 – Containerization ADSIS TI-D
 
--- Deskripsi Project --
+## Deskripsi Project
 
-Project ini merupakan aplikasi web upload dokumen mahasiswa berbasis Node.js yang telah di-containerize menggunakan Docker Compose. 
-Sistem terintegrasi dengan:
-  1. Node.js (Web Application)
-  2. MySQL (Database)
-  3. MinIO (Object Storage)
-  
-- Cara Menjalankan Sistem -
-1. Clone Repository
-    git clone https://github.com/angeliani/Kelompok-5-Containerization-ADSIS-TI-D.git
+Project ini merupakan aplikasi web upload dokumen mahasiswa berbasis **Node.js** yang telah di-containerize menggunakan **Docker Compose**. Sistem terintegrasi dengan beberapa layanan, yaitu:
 
-  Masuk ke folder project:
-    cd Kelompok-5-Containerization-ADSIS-TI-D/app
+- Node.js sebagai Web Application
+- MySQL sebagai Database
+- MinIO sebagai Object Storage
 
-2. Konfigurasi Environment
+---
 
-  Copy file environment:
-    cp .env.example .env
+# Cara Menjalankan Sistem
 
-  Isi file .env:
+## 1. Clone Repository
 
-  DB_HOST=db
-  DB_USER=root
-  DB_PASSWORD=isi_password_database_disini
-  DB_NAME=nusantara_tech
+Clone repository GitHub berikut:
 
-  MYSQL_ROOT_PASSWORD=password
-  MYSQL_DATABASE=nusantara_tech
-  
-  MINIO_ENDPOINT=minio
-  MINIO_PORT=9000
-  MINIO_ACCESS_KEY=admin
-  MINIO_SECRET_KEY=password123
-  MINIO_ROOT_USER=admin
-  MINIO_ROOT_PASSWORD=password123
-  MINIO_BUCKET=documents
-  
-3. Build dan Menjalankan Docker Compose
+```bash
+git clone https://github.com/angeliani/Kelompok-5-Containerization-ADSIS-TI-D.git
+```
 
-  Jalankan perintah berikut:
-  docker compose up --build -d
+Masuk ke folder project:
 
-  Untuk memastikan container berjalan:
-  docker ps
-  <img width="1494" height="125" alt="image" src="https://github.com/user-attachments/assets/ff4cab73-2e5f-496d-953f-e2595dd3f465" />
+```bash
+cd Kelompok-5-Containerization-ADSIS-TI-D/app
+```
 
+---
 
-  **URL dan Port Akses Sistem**
-  Web Application
+## 2. Konfigurasi Environment
 
-  Akses aplikasi web melalui browser:
-  http://localhost:3000
+Copy file environment:
 
-  atau menggunakan IP server:
-  http://IP_SERVER:3000
+```bash
+cp .env.example .env
+```
 
-  <img width="1919" height="1066" alt="Screenshot 2026-05-18 071913" src="https://github.com/user-attachments/assets/0bf817e3-0420-438d-a505-59be90ce3a81" />
+Isi file `.env`:
 
-  
-  **Dashboard MinIO**
+```env
+# Database Configuration
+DB_HOST=db
+DB_USER=root
+DB_PASSWORD=isi_password_database_disini
+DB_NAME=nusantara_tech
 
-  Akses dashboard MinIO:
-  http://localhost:9001
+MYSQL_ROOT_PASSWORD=password
+MYSQL_DATABASE=nusantara_tech
 
-  atau:
-  http://IP_SERVER:9001
+# MinIO Configuration
+MINIO_ENDPOINT=minio
+MINIO_PORT=9000
+MINIO_ACCESS_KEY=admin
+MINIO_SECRET_KEY=password123
+MINIO_ROOT_USER=admin
+MINIO_ROOT_PASSWORD=password123
+MINIO_BUCKET=documents
+```
 
-  <img width="1919" height="1070" alt="Screenshot 2026-05-18 072024" src="https://github.com/user-attachments/assets/17d2112c-df1e-428b-8533-456c4bbbdb7b" />
-  
-  
-  Login MinIO
-  Username : admin
-  Password : password123
+---
 
-  **Letak Bucket MinIO**
-  Bucket yang digunakan untuk penyimpanan file:
-  documents
-  
-  <img width="958" height="531" alt="Screenshot 2026-05-18 080242" src="https://github.com/user-attachments/assets/3ba64123-01c2-473b-a589-32fee8e7073c" />
+## 3. Build dan Menjalankan Docker Compose
 
-  Seluruh file upload mahasiswa akan tersimpan di bucket tersebut.
+Jalankan perintah berikut untuk build dan menjalankan seluruh container:
 
-Pembuatan Table Database
+```bash
+docker compose up --build -d
+```
+
+Untuk memastikan seluruh container berjalan dengan baik:
+
+```bash
+docker ps
+```
+
+Tambahkan screenshot hasil `docker ps` di bawah bagian ini.
+<img width="1494" height="125" alt="Screenshot 2026-05-18 090529" src="https://github.com/user-attachments/assets/deda3be8-52a9-4054-91c5-480e91c5c567" />
+
+---
+
+# URL dan Port Akses Sistem
+
+## Web Application
+
+Akses aplikasi web melalui browser:
+
+```txt
+http://localhost:3000
+```
+
+atau menggunakan IP server:
+
+```txt
+http://IP_SERVER:3000
+```
+
+Tambahkan screenshot tampilan web application di bawah bagian ini.
+<img width="1919" height="1066" alt="Screenshot 2026-05-18 071913" src="https://github.com/user-attachments/assets/ab31faa2-fc3b-4f2d-99bb-676f61de2652" />
+
+---
+
+# Dashboard MinIO
+
+Akses dashboard MinIO melalui browser:
+
+```txt
+http://localhost:9001
+```
+
+atau menggunakan IP server:
+
+```txt
+http://IP_SERVER:9001
+```
+
+## Login MinIO
+
+Gunakan credential berikut:
+
+```txt
+Username : admin
+Password : password123
+```
+
+Tambahkan screenshot dashboard login MinIO di bawah bagian ini.
+<img width="1919" height="1070" alt="Screenshot 2026-05-18 072024" src="https://github.com/user-attachments/assets/938c9513-c389-4600-9e26-adcededd80bf" />
+
+---
+
+# Letak Bucket MinIO
+
+Bucket yang digunakan untuk penyimpanan file upload adalah:
+
+```txt
+documents
+```
+
+Seluruh file upload mahasiswa akan tersimpan di bucket tersebut.
+
+Tambahkan screenshot bucket `documents` di bawah bagian ini.
+<img width="958" height="531" alt="Screenshot 2026-05-18 080242" src="https://github.com/user-attachments/assets/5fee5a71-6ff1-4d8b-811f-5db6cb011743" />
+
+---
+
+# Pembuatan Table Database
 
 Masuk ke container MySQL:
-docker exec -it app-db-1 mysql -u root -p
-  <img width="982" height="655" alt="image" src="https://github.com/user-attachments/assets/6f543518-1a6a-4a36-a3f2-5beb45fa9344" />
 
-Masukkan password: isi_password_database_disini
+```bash
+docker exec -it app-db-1 mysql -u root -p
+```
+
+Masukkan password database.
 
 Pilih database:
-USE nusantara_tech;
 
-Buat tabel:
+```sql
+USE nusantara_tech;
+```
+
+Buat tabel mahasiswa:
+
+```sql
 CREATE TABLE mahasiswa (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nama VARCHAR(255),
     nama_dokumen VARCHAR(255)
 );
+```
 
-**Cara Pengujian Sistem**
+Tambahkan screenshot pembuatan tabel database di bawah bagian ini.
+<img width="532" height="452" alt="Screenshot 2026-05-18 083218" src="https://github.com/user-attachments/assets/ce9519b4-dc45-44b5-8490-0adf93f25098" />
+
+---
+
+# Cara Pengujian Sistem
+
 1. Jalankan seluruh container menggunakan Docker Compose
 2. Buka web application
 3. Input nama mahasiswa
 4. Upload file dokumen
 5. File akan tersimpan ke MinIO
-6. Data mahasiswa tersimpan ke database MySQL
-   
-**Verifikasi Sistem**
-- Verifikasi Container
-  docker ps
-- Verifikasi Database
-  docker exec -it app-db-1 mysql -u root -p
+6. Data mahasiswa akan tersimpan ke database MySQL
 
+---
 
-Lalu jalankan:
+# Verifikasi Sistem
 
+## Verifikasi Container
+
+```bash
+docker ps
+```
+
+## Verifikasi Database
+
+Masuk ke MySQL container:
+
+```bash
+docker exec -it app-db-1 mysql -u root -p
+```
+
+Kemudian jalankan query berikut:
+
+```sql
 USE nusantara_tech;
 SELECT * FROM mahasiswa;
+```
+
+---
+
+# Hasil Pengujian
+
+| Pengujian | Status |
+|---|---|
+| Web Application berjalan | Berhasil |
+| Docker Container berjalan | Berhasil |
+| Koneksi MySQL berhasil | Berhasil |
+| Dashboard MinIO dapat diakses | Berhasil |
+| Upload file ke MinIO | Berhasil |
+| Penyimpanan data ke MySQL | Berhasil |
+
+---
+
+# Kesimpulan
+
+Project berhasil diimplementasikan menggunakan Docker Compose dengan integrasi antara:
+
+- Web Application Node.js
+- Database MySQL
+- Object Storage MinIO
+
+Seluruh layanan berjalan pada container yang berbeda namun tetap saling terhubung melalui Docker Network. Sistem berhasil melakukan upload file ke MinIO dan menyimpan metadata file ke database MySQL.
