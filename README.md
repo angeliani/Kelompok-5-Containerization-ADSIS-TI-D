@@ -209,6 +209,17 @@ SELECT * FROM mahasiswa;
 ```
 
 ---
+## Pengujian Upload Dokumen
+
+Pengujian dilakukan dengan mengunggah file dokumen mahasiswa melalui web application. 
+Hasil pengujian menunjukkan bahwa:
+
+- File berhasil tersimpan pada MinIO Object Storage
+- Data mahasiswa berhasil tersimpan pada Database MySQL
+
+Berikut tampilan hasil upload berhasil:
+
+<img width="1919" height="1062" alt="Screenshot 2026-05-18 092610" src="https://github.com/user-attachments/assets/a7c1781c-289c-48a1-9d86-512f0cfe4f10" />
 
 # Hasil Pengujian
 
