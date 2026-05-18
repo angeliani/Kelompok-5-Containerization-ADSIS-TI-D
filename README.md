@@ -1,5 +1,4 @@
-**Kelompok 5 – Containerization ADSIS TI-D
-**
+**Kelompok 5 – Containerization ADSIS TI-D**
 
 -- Deskripsi Project --
 
@@ -71,6 +70,7 @@ Sistem terintegrasi dengan:
 
   <img width="1919" height="1070" alt="Screenshot 2026-05-18 072024" src="https://github.com/user-attachments/assets/17d2112c-df1e-428b-8533-456c4bbbdb7b" />
   
+  
   Login MinIO
   Username : admin
   Password : password123
@@ -78,6 +78,7 @@ Sistem terintegrasi dengan:
   **Letak Bucket MinIO**
   Bucket yang digunakan untuk penyimpanan file:
   documents
+  
   <img width="958" height="531" alt="Screenshot 2026-05-18 080242" src="https://github.com/user-attachments/assets/3ba64123-01c2-473b-a589-32fee8e7073c" />
 
   Seluruh file upload mahasiswa akan tersimpan di bucket tersebut.
