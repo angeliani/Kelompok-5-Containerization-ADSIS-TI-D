@@ -243,3 +243,25 @@ Project berhasil diimplementasikan menggunakan Docker Compose dengan integrasi a
 - Object Storage MinIO
 
 Seluruh layanan berjalan pada container yang berbeda namun tetap saling terhubung melalui Docker Network. Sistem berhasil melakukan upload file ke MinIO dan menyimpan metadata file ke database MySQL.
+
+---
+
+# Laporan Progres Case Based 2: Containerization
+
+## A. Pemilihan Tech-Stack
+* **Bahasa Pemrograman / Framework:** Aplikasi CRUD dikembangkan menggunakan Node.js dengan framework Express.js.
+* **Base Image Dockerfile:** Base image yang digunakan adalah `node:18-alpine`. Versi Alpine dipilih karena ukurannya yang minimalis, menghemat konsumsi memori, dan mempercepat proses build.
+* **Database:** Database yang digunakan adalah MySQL versi 8.0. Versi ini stabil dan sangat kompatibel dengan driver `mysql2` pada Node.js untuk menangani operasi CRUD.
+* **MinIO Bucket:** Layanan Object Storage menggunakan MinIO dengan nama bucket `documents` untuk menyimpan file unggahan mahasiswa.
+
+## B. Desain Arsitektur Jaringan
+* **Nama Docker Network:** Menggunakan *default bridge network* bawaan Docker Compose (contoh penamaan otomatis oleh sistem: `app_default`).
+* **Metode Pemanggilan Antar Layanan:** Aplikasi web memanggil Database dan MinIO menggunakan fitur Service Name dari Docker Internal DNS. Variabel lingkungan diatur menjadi `DB_HOST=db` untuk MySQL dan `MINIO_ENDPOINT=minio` untuk MinIO, bukan menggunakan localhost.
+* **Port Host yang Dibuka:**
+  * **Dashboard Utama Aplikasi:** Port `3000` (Pemetaan `3000:3000`).
+  * **Dashboard GUI Database:** Tidak ada port host yang dibuka untuk efisiensi resource memori (dikelola langsung melalui CLI di dalam container).
+  * **Console MinIO:** Port `9001` (Pemetaan `9001:9001` untuk Console, dan `9000:9000` untuk API).
+
+## C. Kendala Teknis
+* **Kendala Terbesar:** Keterbatasan resource penyimpanan (*storage virtual disk*) pada environment Ubuntu yang menyebabkan proses build terhenti karena kapasitas memori penuh (indikasi `OS errno 28 - No space left on device`).
+* **Layanan yang Sering Error:** Container Database (MySQL) paling sering mengalami crash atau berstatus Restarting secara terus-menerus karena gagal melakukan inisialisasi struktur direktori awal akibat memori penuh. Solusi yang berhasil diterapkan adalah melakukan pembersihan cache sistem dengan `docker system prune` dan menggunakan base image versi Alpine.
