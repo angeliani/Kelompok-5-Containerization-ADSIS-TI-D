@@ -151,8 +151,7 @@ documents
 Seluruh file upload mahasiswa akan tersimpan di bucket tersebut.
 
 Screenshot bucket `documents`.
-<img width="960" height="536" alt="image" src="https://github.com/user-attachments/assets/b829313f-7fce-4cc7-90c8-305b325468ab" />
-
+<img width="960" height="535" alt="image" src="https://github.com/user-attachments/assets/3e4d3213-24ea-4a51-b41a-7903f0eea590" />
 
 ---
 
