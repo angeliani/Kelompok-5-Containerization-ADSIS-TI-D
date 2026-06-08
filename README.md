@@ -74,7 +74,7 @@ Untuk memastikan seluruh container berjalan dengan baik:
 docker ps
 ```
 
-Tambahkan screenshot hasil `docker ps` di bawah bagian ini.
+Screenshot hasil `docker ps`.
 <img width="1494" height="125" alt="Screenshot 2026-05-18 090529" src="https://github.com/user-attachments/assets/deda3be8-52a9-4054-91c5-480e91c5c567" />
 
 ---
@@ -95,7 +95,7 @@ atau menggunakan IP server:
 http://IP_SERVER:3000
 ```
 
-Tambahkan screenshot tampilan web application di bawah bagian ini.
+Screenshot tampilan web application
 <img width="1919" height="1066" alt="Screenshot 2026-05-18 071913" src="https://github.com/user-attachments/assets/ab31faa2-fc3b-4f2d-99bb-676f61de2652" />
 
 ---
@@ -123,7 +123,7 @@ Username : admin
 Password : password123
 ```
 
-Tambahkan screenshot dashboard login MinIO di bawah bagian ini.
+Screenshot dashboard login MinIO.
 <img width="1919" height="1070" alt="Screenshot 2026-05-18 072024" src="https://github.com/user-attachments/assets/938c9513-c389-4600-9e26-adcededd80bf" />
 
 ---
@@ -138,7 +138,7 @@ documents
 
 Seluruh file upload mahasiswa akan tersimpan di bucket tersebut.
 
-Tambahkan screenshot bucket `documents` di bawah bagian ini.
+Screenshot bucket `documents`.
 <img width="958" height="531" alt="Screenshot 2026-05-18 080242" src="https://github.com/user-attachments/assets/5fee5a71-6ff1-4d8b-811f-5db6cb011743" />
 
 ---
@@ -169,7 +169,8 @@ CREATE TABLE mahasiswa (
 );
 ```
 
-Tambahkan screenshot pembuatan tabel database di bawah bagian ini.
+Screenshot pembuatan tabel database.
+
 <img width="532" height="452" alt="Screenshot 2026-05-18 083218" src="https://github.com/user-attachments/assets/ce9519b4-dc45-44b5-8490-0adf93f25098" />
 
 ---
