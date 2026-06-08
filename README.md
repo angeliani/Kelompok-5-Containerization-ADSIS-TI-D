@@ -138,11 +138,7 @@ Setelah berhasil login ke dashboard MinIO, buat bucket untuk penyimpanan file up
 txt
 documents
 
-
 4. Klik *Create Bucket* untuk menyimpan
-
-Screenshot pembuatan bucket.
-
 
 # Letak Bucket MinIO
 
@@ -155,7 +151,8 @@ documents
 Seluruh file upload mahasiswa akan tersimpan di bucket tersebut.
 
 Screenshot bucket `documents`.
-<img width="958" height="531" alt="Screenshot 2026-05-18 080242" src="https://github.com/user-attachments/assets/5fee5a71-6ff1-4d8b-811f-5db6cb011743" />
+<img width="960" height="536" alt="image" src="https://github.com/user-attachments/assets/b829313f-7fce-4cc7-90c8-305b325468ab" />
+
 
 ---
 
