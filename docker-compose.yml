@@ -3,7 +3,6 @@ version: '3.8'
 services:
   app:
     build: ./app
-    user: "root"
     ports:
       - "3000:3000"
     environment:
@@ -19,6 +18,8 @@ services:
     depends_on:
       - db
       - minio
+    networks:
+          - nusantara_net
 
   db:
     image: mysql:8.0
@@ -27,6 +28,8 @@ services:
       - MYSQL_DATABASE=${DB_NAME}
     volumes:
       - db_data:/var/lib/mysql
+    networks:
+      - nusantara_net
 
   minio:
     image: minio/minio
@@ -39,7 +42,13 @@ services:
     volumes:
       - minio_data:/data
     command: server /data --console-address ":9001"
+    networks:
+          - nusantara_net
 
 volumes:
   db_data:
   minio_data:
+
+networks:
+  nusantara_net:
+    driver: bridge
