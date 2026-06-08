@@ -127,6 +127,22 @@ Screenshot dashboard login MinIO.
 <img width="1919" height="1070" alt="Screenshot 2026-05-18 072024" src="https://github.com/user-attachments/assets/938c9513-c389-4600-9e26-adcededd80bf" />
 
 ---
+# Pembuatan Bucket MinIO
+
+Setelah berhasil login ke dashboard MinIO, buat bucket untuk penyimpanan file upload:
+
+1. Klik menu *Buckets* di sidebar kiri
+2. Klik tombol *Create Bucket*
+3. Isi nama bucket:
+
+txt
+documents
+
+
+4. Klik *Create Bucket* untuk menyimpan
+
+Screenshot pembuatan bucket.
+
 
 # Letak Bucket MinIO
 
